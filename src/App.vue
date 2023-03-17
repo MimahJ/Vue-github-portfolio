@@ -18,8 +18,8 @@ import img from './assets/imageme.jpg'
       
     </div>
     <nav>
-     <RouterLink to ="/" class="link">About</RouterLink>
-     <RouterLink to ="/landing" class="link">LandingPage</RouterLink>
+     <RouterLink to ="/" class="link">Home</RouterLink>
+     <RouterLink to ="/about" class="link">About</RouterLink>
      <RouterLink to ="/repos" class="link">Repos</RouterLink>
 
     </nav>
@@ -85,7 +85,7 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
+    margin-left: 1rem;
     font-size: 1rem;
 
     padding: 1rem 0;

@@ -7,15 +7,19 @@
 <script>
 new Vue({
   el: '#app',
-  data: {
-    title: 'Welcome to my Github Portfolio!'
-  }
+  data() {
+    return {
+      repos: [],
+    };
+  },
 });
+
 </script>
 
 <div id="app">
+  
   <header>
-    <h1>{{ title }}</h1>
+    <h1>My Github Portfolio</h1>
     <nav>
       <ul>
         <li><a href="#">About</a></li>
@@ -25,7 +29,6 @@ new Vue({
   </header>
   <main>
     <section>
-      <h2>What We Offer</h2>
       <p>Here you will find a list of all my projects and repositories.</p>
       <a href="#" class="cta-button">Get Started</a>
     </section>

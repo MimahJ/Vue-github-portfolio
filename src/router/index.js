@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import LandingPageView from '../views/LandingPageview.vue'
+import AboutView from '../views/AboutView.vue'
 import ErrorView from '../views/ErrorView.vue'
 import ReposView from '../views/ReposView.vue'
 import Reposdetails from '../views/Reposdetails.vue'
@@ -10,42 +10,39 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'HomeView',
       component: HomeView
     },
     {
-      path: '/',
-      name: 'about',
+      path: '/about',
+      name: 'AboutView',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: AboutView
     },
     {
-      path: "/repos",
-      name: "repos",
+      path: '/repos',
+      name: 'ReposView',
       component: ReposView,
 
       children: [
         {
-          path: "/repos/repo.name",
-          name: "repo-details",
-          component: () => import("../views/Reposdetails.vue"),
+          path: '/repos/:id',
+          name: 'Reposdetails',
+          component: Reposdetails
         },
       ],
 },
 
     {
-      path: "/:error*",
-      name: "error",
-      component: () => import("../views/ErrorView.vue"),
+      path: '/:pathMatch(.*)*',
+      name: 'ErrorView',
+      component: ErrorView
 
     },
-    {
-      path: "/:landing",
-      name: "LandingPage",
-      component: LandingPageView,
-    }
+    
+    
   
 
   ]

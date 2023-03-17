@@ -82,11 +82,8 @@ const searchRepos = async () => {
 
       <div class="repo" v-for="repo in currentRepos" :key="repo.id">
         <div class="repo__name">
-          <RouterLink :to="`/repos/${repo.name}`">{{ repo.name }}</RouterLink>
 
-          <RouterView />
-
-          <!--<a :href="repo.html_url" target="_blank">{{ repo.name }}</a>-->
+          <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
 
           <p class="repo_desc">{{ repo.description }}</p>
         </div>
@@ -137,9 +134,11 @@ input {
   align-items: center;
   justify-content: center;
   margin: 3rem auto;
-  background-color: rgb(241, 237, 237);
-  height: 60vh;
-  width: 50vw;
+  background-color: grey;
+  height: 100vh;
+  width: 70vw;
+  color: black;
+  
 }
 
 .git__user {
@@ -167,6 +166,7 @@ input {
   justify-content: center;
   width: 100%;
   margin-top: 2rem;
+  color: black;
 }
 
 .repo {
@@ -178,7 +178,7 @@ input {
   margin-top: 2rem;
   padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .repo__name {
@@ -216,6 +216,7 @@ button {
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
+  background-color: var(--color-text);
 }
 
 .pagination__item {
